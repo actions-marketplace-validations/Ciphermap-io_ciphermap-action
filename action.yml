@@ -324,7 +324,7 @@ runs:
       # always(): the upload must happen precisely when the gate above failed
       # the step — that is when the findings matter most.
       if: ${{ always() && inputs.upload-sarif == 'true' && steps.scan.outputs.invoked == 'true' && steps.sarif.outputs.exists == 'true' }}
-      uses: github/codeql-action/upload-sarif@f205ea1c3313d32999d8d6a48b4f6530d4437b38 # v4.37.4
+      uses: github/codeql-action/upload-sarif@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
       with:
         sarif_file: ${{ inputs.sarif-file }}
 
