@@ -10,7 +10,7 @@
 Zero-egress post-quantum cryptography (PQC) discovery across **12 languages**, `.jar`/`.whl` archives, `.jks`/`.p12` keystores, and TLS/IaC configs directly inside your GitHub Actions runner — uploading **SARIF 2.1.0** to **GitHub Security → Code Scanning** and generating deterministic **CycloneDX 1.7 (ECMA-424) CBOM** artifacts with **zero source code leaving your workflow**.
 
 - **5-Second Copy-Paste Quickstart** below · **Zero-Install Public Repo Scorecard:** [ciphermap.io/scan](https://www.ciphermap.io/scan?utm_source=github_action&utm_medium=readme&utm_campaign=marketplace_action&utm_content=public_scan)
-- **Claim Free 7-Day Corporate Trial Key (`CIPHERMAP_LICENSE`):** [ciphermap.io/eval-pack#trial](https://www.ciphermap.io/eval-pack?utm_source=github_action&utm_medium=readme&utm_campaign=marketplace_action&utm_content=eval_pack_trial#trial)
+- **Signed Offline CLI & Guided Evaluation Key (`CIPHERMAP_LICENSE`):** [ciphermap.io/eval-pack](https://www.ciphermap.io/eval-pack?utm_source=github_action&utm_medium=readme&utm_campaign=marketplace_action&utm_content=eval_pack) · [Book 20-Min Live Repo Proof](https://www.ciphermap.io/book?utm_source=github_action&utm_medium=readme&utm_campaign=marketplace_action&utm_content=book_proof) · [Commercial Plans](https://www.ciphermap.io/pricing?utm_source=github_action&utm_medium=readme&utm_campaign=marketplace_action&utm_content=pricing)
 - **Dedicated GitHub Actions & Air-Gapped Runner Guide:** [ciphermap.io/github](https://www.ciphermap.io/github?utm_source=github_action&utm_medium=readme&utm_campaign=marketplace_action&utm_content=github_guide)
 - **3PAO / QSA Assessor Workbench & 1-Page InfoSec Zero-Egress Memo:** [ciphermap.io/for-assessors](https://www.ciphermap.io/for-assessors?utm_source=github_action&utm_medium=readme&utm_campaign=marketplace_action&utm_content=for_assessors) · [ciphermap.io/procurement-memo](https://www.ciphermap.io/procurement-memo?utm_source=github_action&utm_medium=readme&utm_campaign=marketplace_action&utm_content=procurement_memo)
 
@@ -39,9 +39,9 @@ jobs:
           fail-on: high
 ```
 
-### Add `CIPHERMAP_LICENSE` for CNSA 2.0 Gate + CycloneDX 1.7 CBOM (7-Day Trial or Enterprise)
+### Add `CIPHERMAP_LICENSE` for CNSA 2.0 Gate + CycloneDX 1.7 CBOM (Guided Evaluation or Commercial License)
 
-Store your 7-day corporate trial or Enterprise license key as `CIPHERMAP_LICENSE` in **Settings → Secrets and variables → Actions** to unlock `--target cnsa-2.0`, CycloneDX 1.7 CBOMs, HTML CBOM Explorer, and 16-mandate compliance reports:
+Store your guided evaluation, Standalone Auditor, or Enterprise Fleet license key as `CIPHERMAP_LICENSE` in **Settings → Secrets and variables → Actions** to unlock `--target cnsa-2.0`, CycloneDX 1.7 CBOMs, HTML CBOM Explorer, and 16-mandate compliance reports:
 
 ```yaml
       - uses: Ciphermap-io/ciphermap-action@v1
@@ -111,7 +111,7 @@ On ephemeral `ubuntu-latest`, `macos-latest`, or `windows-latest` (`amd64` / `ar
 |---|---|---|---|
 | `fail-on` | No | `high` | Severity threshold that fails the workflow (`info`, `low`, `medium`, `high`, `critical`, `none`) |
 | `target` | No | `""` | Compliance target profile (`cnsa-2.0`, `fips-140-3`, `nist-sp-800-56b`, `bsi-tr-02102`, `anssi-pqc`) |
-| `license-key` | No | `""` | Signed `CIPHERMAP_LICENSE` secret (`CIPHERMAP-TEAM-...`, `CIPHERMAP-ENTERPRISE-...`, or 7-day corporate trial key) |
+| `license-key` | No | `""` | Signed `CIPHERMAP_LICENSE` secret (`CIPHERMAP-TEAM-...`, `CIPHERMAP-ENTERPRISE-...`, or guided evaluation key) |
 | `cli-version` | No | `v1.0.6` | Exact CipherMap CLI version verified prior to scan execution |
 | `sarif-file` | No | `ciphermap.sarif` | Output path for the SARIF 2.1.0 report |
 | `upload-sarif` | No | `true` | Upload SARIF 2.1.0 to GitHub Security → Code Scanning (`if: always()`) |

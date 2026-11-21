@@ -216,7 +216,7 @@ runs:
           trap 'rm -f "$installer"' EXIT
           http_code="$(curl --proto '=https' --tlsv1.2 --silent --show-error --location --max-time 60 -w '%{http_code}' --output "$installer" "https://www.ciphermap.io/install.sh?src=github-action" || true)"
           if [ "${http_code}" = "503" ]; then
-            echo "::error title=Enable Keyless GitHub OIDC or Pass License Key::Add 'id-token: write' to job permissions for keyless Free PQC + SARIF scanning, or pass 'license-key' from your CIPHERMAP_LICENSE repository secret (free 7-day corporate trial at https://www.ciphermap.io/eval-pack), or pre-bake /usr/local/bin/ciphermap (${CM_CLI_VERSION}) on your self-hosted runner." >&2
+            echo "::error title=Enable Keyless GitHub OIDC or Pass License Key::Add 'id-token: write' to job permissions for keyless Free PQC + SARIF scanning, or pass 'license-key' from your CIPHERMAP_LICENSE repository secret (signed CLI / guided evaluation at https://www.ciphermap.io/eval-pack or https://www.ciphermap.io/book), or pre-bake /usr/local/bin/ciphermap (${CM_CLI_VERSION}) on your self-hosted runner." >&2
             exit 1
           fi
           [ "${http_code}" = "200" ] || {
